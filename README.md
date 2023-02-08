@@ -16,7 +16,7 @@ These scripts are used to create and update our stack.
 deploy the network infrastructure first before launching the resources stack
 
 #### command:
-./create.sh IacProject network.yml network.json
+    ./create.sh IacProject network.yml network.json
 
 #### resources.
 This YAML file provides all necessary ressources to deploy a high-availabilty web app 

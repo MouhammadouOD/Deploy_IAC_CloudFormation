@@ -241,3 +241,9 @@ Outputs:
     Value: !Join [ ',',[ !Ref PrivateSubnet1, !Ref PrivateSubnet2] ] 
     Export:
       Name: !Sub '${EnvironmentName}-PRIV-SN'
+
+  InternetGatewayAttachment:
+    Description: Internet Gateway attachment
+    Value: !Ref InternetGatewayAttachment 
+    Export:
+      Name: !Sub '${EnvironmentName}-IGW-ATT'

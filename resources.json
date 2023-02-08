@@ -1,0 +1,12 @@
+
+[
+    {
+        "ParameterKey":"EnvironmentName",
+        "ParameterValue":"IacProject"
+    },
+    {
+        "ParameterKey":"InstanceAMI",
+        "ParameterValue":"ami-08fdec01f5df9998f"
+    }
+
+]

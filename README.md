@@ -27,5 +27,5 @@ JumpBox(server with which we'll connect to our ec2instances placed in private su
     - We provided the loadbancer DNSName as an output
     - Don't forget to change MyIp paramater value to your Personal Ip Address
 
-#### command:
-./create.sh IacProjectResources resources.yml resources.json
+#### command
+    ./create.sh IacProjectResources resources.yml resources.json

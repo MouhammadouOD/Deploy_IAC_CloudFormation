@@ -1,5 +1,5 @@
 ### Project Title - Deploy a high-availability web app using CloudFormation
-This folder provides the starter code for a high-availability web app Deployment using CloudFormation. This folder contains the following files:
+This folder provides the complete code for a high-availability web app Deployment using CloudFormation. This folder contains the following files:
 
 
 #### network.yml

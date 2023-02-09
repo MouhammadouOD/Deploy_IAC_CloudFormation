@@ -70,6 +70,7 @@ Resources:
 #### LAUNCH CONFIGURATION WITH ACCESS S3 PROFILE
   WebAppLaunchConfiguration:
     Type: AWS::AutoScaling::LaunchConfiguration
+    DependsOn: S3Bucket
     Properties: 
       LaunchConfigurationName: WebAppLaunchConfiguration
       IamInstanceProfile: !Ref AccessS3RoleInstanceProfile
@@ -223,8 +224,7 @@ Resources:
         ErrorDocument: error.html
     DeletionPolicy: Retain
 
-#### CREATE A S3 OBJECT TO STORE OUR INDEX.HTML FILE
- 
+#### CREATE A S3 OBJECT TO STORE OUR INDEX.HTML FILE 
   S3BucketObject:
     Type: AWS::S3::Object
     Properties:

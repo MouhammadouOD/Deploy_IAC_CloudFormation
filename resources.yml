@@ -9,6 +9,16 @@ Parameters:
     Type: String
     Default: ami-08fdec01f5df9998f
 
+  GroupMinSize:
+    Description: Min size of the autoScaling Group 
+    Type: String
+    Default: '4'
+
+  GroupMaxSize:
+    Description: Max size of the autoScaling Group 
+    Type: String
+    Default: '4'
+
 
 Resources:
 
@@ -79,8 +89,7 @@ Resources:
           sudo apt-get install apache2 -y
           sudo systemctl start apache2
           sudo systemctl enable apache2
-          cd /var/www/html
-          echo '<h1>It Works ! Udagram, Udacity </h1>' > index.html
+          aws s3 cp s3://${S3Bucket}/index.html /var/www/html/index.html
           systemctl restart apache2
 
 #### AUTOSCALING GROUP      
@@ -89,8 +98,8 @@ Resources:
     DependsOn: WebAppLaunchConfiguration
     Properties:
       LaunchConfigurationName: WebAppLaunchConfiguration
-      MaxSize: '4'
-      MinSize: '4'
+      MaxSize: !Ref GroupMaxSize
+      MinSize: !Ref GroupMinSize
       VPCZoneIdentifier:
         - Fn::ImportValue:
            !Sub ${EnvironmentName}-PRIV-SN1
@@ -213,6 +222,17 @@ Resources:
         IndexDocument: index.html
         ErrorDocument: error.html
     DeletionPolicy: Retain
+
+#### CREATE A S3 OBJECT TO STORE OUR INDEX.HTML FILE
+ 
+  S3BucketObject:
+    Type: AWS::S3::Object
+    Properties:
+      Bucket: !Ref S3Bucket
+      Key: index.html
+      Content: |
+        <h1>it works! Udagram, Udacity</h1>
+          
 
 #### S3 BUCKET POLICY
   BucketPolicy:

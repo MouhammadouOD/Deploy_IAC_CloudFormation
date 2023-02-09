@@ -7,6 +7,14 @@
     {
         "ParameterKey":"InstanceAMI",
         "ParameterValue":"ami-08fdec01f5df9998f"
+    },
+    {
+        "ParameterKey":"GroupMinSize",
+        "ParameterValue":"4"
+    },
+    {
+        "ParameterKey":"GroupMaxSize",
+        "ParameterValue":"4"
     }
 
 ]

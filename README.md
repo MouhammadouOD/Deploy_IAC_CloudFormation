@@ -1,5 +1,5 @@
 ### Project Title - Deploy a high-availability web app using CloudFormation
-This folder provides the complete code for a high-availability web app Deployment using CloudFormation. This folder contains the following files:
+This folder provides the complete Infrastructure as Code for a high-availability web app Deployment that fetch website files from S3 bucket using CloudFormation. This folder contains the following files:
 
 
 #### network.yml
@@ -20,7 +20,7 @@ deploy the network infrastructure first before launching the resources stack
 
 #### resources.
 This YAML file provides all necessary ressources to deploy a high-availabilty web app 
-in the network that we have just created. It provides SecurityGroups, LaunchConfiguration, AutoScalingGroup, TargetGroup with HealthCheck, LoadBalancer, Listener, ListenerRule, S3 bucket, IAMRole and IAMProfile to provide ec2 access to the S3 bucket,
+in the network that we have just created. It provides SecurityGroups, LaunchConfiguration, AutoScalingGroup, TargetGroup with HealthCheck, LoadBalancer, Listener, ListenerRule, S3 bucket,S3 object, IAMRole and IAMProfile to provide ec2 access to the S3 bucket,
 JumpBox(server with which we'll connect to our ec2instances placed in private subnets)
 
 #### Info
